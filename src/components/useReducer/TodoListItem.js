@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const TodoListItem = ({ todo, index, handleToogle, handleDelete }) => {
 	return (
-		<li className="list-group-item d-flex justify-content-between pointer" key={index + 1} onClick={() => handleToogle(todo.id)}>
-			<p className={`${todo.estado && 'text-decoration-line-through'}`}>
+		<li className="list-group-item d-flex justify-content-between pointer" key={index + 1}>
+			<p className={`${todo.estado && 'text-decoration-line-through'}`} onClick={() => handleToogle(todo.id)}>
 				{index + 1} .- {todo.tarea}
 			</p>
 			<button className="btn btn-outline-danger" onClick={() => handleDelete(todo.id)}>
